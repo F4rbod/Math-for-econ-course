@@ -1,22 +1,82 @@
 ---
-title: "R Notebook"
+title: "Mathematics for Economics Class Notes"
+author: "Farbod Alinezhad"
 output: html_notebook
 ---
-
-The [R plugin](https://www.jetbrains.com/help/pycharm/r-plugin-support.html) for IntelliJ-based IDEs provides
-handy capabilities to work with the [R Markdown](https://www.jetbrains.com/help/pycharm/r-markdown.html) files.
-To [add](https://www.jetbrains.com/help/pycharm/r-markdown.html#add-code-chunk) a new R chunk,
-position the caret at any line or the code chunk, then click "+".
-
-The code chunk appears:
-```{r}
+```{r, setup, include = F}
+library(matlib)
 ```
+# Introduction
+I am taking this course as a part of my PhD. The full name of the course is Mathematics for Economists. It goes through linear algebra, calculus, and statistics related to economics. It uses R programming language for most of its exercises.
 
-Type any R code in the chunk, for example:
+
+## Modules 1 and 2
+These modules were about linear algebra. The topics included an introduction to matrices and their uses in economics, solving equations, matrix inverses, determinants, etc.
+
+### Assignment
+\
+Variables from the assignment:
 ```{r}
-mycars <- within (mtcars, {cyl <- ordered (cyl)})
-mycars
-```
+k<-10
 
-Now, click the **Run** button on the chunk toolbar to [execute](https://www.jetbrains.com/help/pycharm/r-markdown.html#run-r-code) the chunk code. The result should be placed under the chunk.
-Click the **Knit and Open Document** to build and preview an output.
+A<-matrix(c(1,2,3,2,1,4,3,4,1), 3,3, byrow=TRUE)
+
+B<-matrix(c(7,8,9,8,7,10,19,12,13), 3,3, byrow=TRUE)
+
+W<-matrix(c(2,5,3,5,5,7), 3,2, byrow=TRUE)
+
+D<-c(10, 22, 14)
+
+E<-c(13, 17)
+
+Repeat<-c(5,5,7)
+
+Zero<-c(0,0,0)
+
+Unit<-c(1,1,1)
+
+```
+**Questions**
+
+1. what is KD? `r k*D`
+2.	What is UnitD? `r Unit %*% D`
+3.	What is DDT?
+```{r, echo = F}
+D %*% t(D)
+```
+4.	What is DTD?
+```{r, echo = F}
+t(D) %*% D
+```
+5.	What is A+B? `r A + B`
+6.	What is A-B?
+7.	What is DA?
+8.	What is AD?
+9.	What is BD?
+10.	What is DB?
+11.	What is AB?
+12.	What is BA
+13.	What is ATBT?
+14.	What is BTAT
+15.	What is (AB)T
+16.	What is A-1?
+```{r, echo = F}
+inv(A)
+```
+17.	What is B-1?
+18.	What is A-1B-1?
+19.	What is B-1A-1?
+20.	What is (AB)-1?
+21.	What is (BA)-1?
+22.	What is D concatenated with E (E follows D)?
+23.	What is AW?
+24.	What is WA?
+25.	What is WTW?
+26.	What is WWT?
+27.	What is det(A)?
+28.	What is AA-1?
+29.	What is A-1A?
+30.	How does the structure of A differ from that of B? (Think in matrix terms.)
+31.	What is W-1?
+32.	Put A in row reduced echelon form (RREF)
+33.	Put W in RREF
